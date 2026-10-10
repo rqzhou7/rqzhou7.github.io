@@ -33,6 +33,8 @@ a:focus-visible{outline:2px solid var(--turf); outline-offset:3px; border-radius
 header.bar{position:sticky; top:env(safe-area-inset-top,0px); z-index:10; background:color-mix(in srgb,var(--paper) 88%,transparent); backdrop-filter:blur(10px); border-bottom:1px solid var(--line)}
 header.bar .wrap{display:flex; align-items:center; justify-content:space-between; height:60px}
 .mark{font-family:var(--serif); font-size:22px; text-decoration:none}
+.mark-sub{color:var(--muted); margin-left:6px}
+@media (max-width:560px){.mark{font-size:19px} .mark-sub{margin-left:4px}}
 nav a{text-decoration:none; font-size:14px; color:var(--muted); margin-left:22px}
 nav a:hover{color:var(--ink)}
 @media (max-width:560px){nav a{margin-left:14px} nav a.hide-sm{display:none}}
@@ -117,15 +119,15 @@ footer small{color:var(--muted)}
 <body>
 
 <header class="bar"><div class="wrap">
-  <a class="mark" href="#top">Video Production</a>
+  <a class="mark" href="#top">Reese Zhou <span class="mark-sub">Video Production</span></a>
   <nav><a href="#projects">Projects</a><a href="#avtv">AVtv</a><a href="#contact">Contact</a></nav>
 </div></header>
 
 <main id="top" class="wrap">
   <section class="hero">
     <div>
-      <h1>Reese<br>Zhou</h1>
-      <p class="lede">Hi! I'm Reese. I love editing grand solo projects and filming spectacular places.</p>
+      <h1>Hi! I'm<br>Reese.</h1>
+      <p class="lede">I love editing grand solo projects and filming spectacular places.</p>
       <ul class="creds">
         <li>Editor-in-Chief, Amador Valley TV</li>
         <li>1st Place, JEA National Broadcast Package Contest (2024)</li>
