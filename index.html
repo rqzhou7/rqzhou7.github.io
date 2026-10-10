@@ -88,12 +88,15 @@ h3.group:first-of-type{margin-top:0}
 .years{display:block; font-family:var(--sans); font-size:13px; font-weight:600; letter-spacing:.04em; color:var(--turf); margin-bottom:8px}
 .band .years{color:#fff; opacity:.85}
 #avtv-featured{margin-bottom:48px}
-.feature{display:grid; grid-template-columns:1.5fr 1fr; gap:20px 32px; align-items:center; margin-bottom:32px}
-.feature .t{font-family:var(--serif); font-weight:400; font-size:30px; line-height:1.15; margin-top:0}
-.feature .d{font-size:15px; max-width:30em; margin-top:10px}
-.trio{display:grid; grid-template-columns:repeat(3,1fr); gap:28px 22px}
-.trio .item .t{font-family:var(--serif); font-weight:400; font-size:21px; line-height:1.2}
-@media (max-width:820px){.feature,.trio{grid-template-columns:1fr}}
+.quad{display:grid; grid-template-columns:1fr 1fr; gap:32px 28px}
+.quad .item .t{font-family:var(--serif); font-weight:400; font-size:24px; line-height:1.2; margin-top:12px}
+.quad .item .d{font-size:14.5px; max-width:34em}
+.cats{display:grid; grid-template-columns:repeat(4,1fr); gap:28px 22px}
+.cat .stack{display:grid; gap:22px}
+.cat h3.group{margin-top:0}
+@media (max-width:900px){.cats{grid-template-columns:1fr 1fr}}
+@media (max-width:820px){.quad{grid-template-columns:1fr}}
+@media (max-width:520px){.cats{grid-template-columns:1fr}}
 @media (max-width:820px){.pair{grid-template-columns:1fr}}
 
 /* band */
@@ -122,7 +125,7 @@ footer small{color:var(--muted)}
   <section class="hero">
     <div>
       <h1>Reese<br>Zhou</h1>
-      <p class="lede">Hey, I'm Reese, a NanoEngineering freshman at UC San Diego who never quite puts the camera down. My favorite projects are the big solo ones, where I get to plan, shoot, and cut the whole thing myself, and anything that gives me an excuse to film somewhere cool, whether that's a Philadelphia food hall or a day at Six Flags.</p>
+      <p class="lede">Hi! I'm Reese. I love editing grand solo projects and filming spectacular places.</p>
       <ul class="creds">
         <li>Editor-in-Chief, Amador Valley TV</li>
         <li>1st Place, JEA National Broadcast Package Contest (2024)</li>
@@ -152,7 +155,7 @@ footer small{color:var(--muted)}
       <div class="inner">
         <span class="years">2023–2025</span>
         <h2>Amador Valley TV</h2>
-        <p>Segments I produced and edited for the weekly show: event recaps, profiles, local features, and a few fun ones that made it to air.</p>
+        <p>Just some of the segments I produced and edited for the weekly show: event recaps, profiles, local features, and a few fun ones that made it to air.</p>
       </div>
     </div>
     <div id="avtv-featured"></div>
@@ -174,12 +177,12 @@ footer small{color:var(--muted)}
     <h2>Say hello</h2>
     <a class="mail" href="mailto:rez012@ucsd.edu">rez012@ucsd.edu</a>
   </div>
-  <small>Made with DaVinci Resolve, Final Cut Pro, and too many late renders.</small>
+  <small>Made with DaVinci Resolve &amp; a DJI Osmo Pocket 2. Otherwise a phone.</small>
 </div></footer>
 
 <script>
 const THUMB = {
-  '1WWgqMjuyYKRikkqLbtMKEEowSOaBoz4d':'calculus', '1s6zciAZj3fPX_dTQZwQa8Ifobdont6Gg':'shapes-of-sounds',
+  '1O6XvBoahDyufmyfwHx63jzH9FjE5TXlK':'calculus', '1s6zciAZj3fPX_dTQZwQa8Ifobdont6Gg':'shapes-of-sounds',
   '1WLjELQjv97b6AnnYAtizMVIGmDGBVTlB':'terminal-market', '1CqMqNdsDU5f4j83D-0SGQ7sXn3UTJ_oQ':'japantown',
   '1PPplg1bFZ5SlJI763KbW39yZ1LxV0Pe2':'homecoming', '1nBNqWTuXKyui7x4uo8nH4I4GYzLFI6bq':'aloha',
   '1MGXL4av86fYUU2R9RV3i36d5Jmm6Mrxf':'counterculture', '1Z27f2aBbR08m7tzgOu5oZFB86rXti__W':'pumpkin-patch',
@@ -193,31 +196,29 @@ const drive = id => ({href:`https://drive.google.com/file/d/${id}/view`, img: TH
 const yt = id => ({href:`https://www.youtube.com/watch?v=${id}`, img:`https://i.ytimg.com/vi/${id}/hqdefault.jpg`});
 
 const topTwo = [
-  {...drive('1WWgqMjuyYKRikkqLbtMKEEowSOaBoz4d'), t:"Calculus Tailoring Coasters", y:"2025", d:"My joint Multivariable Calculus final project, documenting the journey of designing three custom roller coasters using Calc 3 concepts, complete with hand-drawn sketches, physics calculations, equation modeling, 3D coded animations, and a trip to Six Flags."},
+  {...drive('1O6XvBoahDyufmyfwHx63jzH9FjE5TXlK'), t:"Calculus Tailoring Coasters", y:"2025", d:"My joint Multivariable Calculus final project, documenting the journey of designing three custom roller coasters using Calc 3 concepts, complete with hand-drawn sketches, physics calculations, equation modeling, 3D coded animations, and a trip to Six Flags."},
   {...drive('1s6zciAZj3fPX_dTQZwQa8Ifobdont6Gg'), t:"Shapes of Sounds", y:"2026", d:"My second-semester Multivariable Calculus final project, an investigation into the wave equation and acoustic resonance, exploring the relationship between sound, vibration, and pattern formation through a hand-built physical model."},
 ];
 
-const avtvLead = {...drive('1WLjELQjv97b6AnnYAtizMVIGmDGBVTlB'), t:"A Day in Prep at Philadelphia's Reading Terminal Market", y:"2024",
-  d:"Made at the 2024 JEA National Convention for the Broadcast Package contest: planned, filmed, and edited in a single 8-hour window. Won 1st place."};
-const avtvSide = [
+const avtvTop = [
   {...drive('1CqMqNdsDU5f4j83D-0SGQ7sXn3UTJ_oQ'), t:"A Trip to San Francisco's Japantown"},
   {...drive('1nBNqWTuXKyui7x4uo8nH4I4GYzLFI6bq'), t:"Aloha Spirit Week Recap"},
   {...drive('1Z27f2aBbR08m7tzgOu5oZFB86rXti__W'), t:"Donventures: A Pumpkin Patch"},
+  {...drive('1WLjELQjv97b6AnnYAtizMVIGmDGBVTlB'), t:"A Day in Prep at Philadelphia's Reading Terminal Market", y:"2024",
+  d:"Made at the 2024 JEA National Convention for the Broadcast Package contest: planned, filmed, and edited in a single 8-hour window. Won 1st place."},
 ];
 
 const avtv = [
-  ["Event weeks", [
+  ["Event Weeks", [
     [drive('1PPplg1bFZ5SlJI763KbW39yZ1LxV0Pe2'), "Homecoming Week Recap"],
     [drive('1MGXL4av86fYUU2R9RV3i36d5Jmm6Mrxf'), "Juniors Celebrate Counterculture Day"]]],
-  ["Local features", [
+  ["Local Features", [
     [drive('10NJy5iuIcPY_smBo-U30hqc3F5bI-hYK'), "Donventures: An Ice Rink"],
-    [drive('1j89DYvdT5mEg8SwBeDidc-oNtw5YpDEK'), "Christmas Decorations Around Pleasanton"],
-    [drive('1WFW47NxRYpLiOrqBQyuv6u5WPcwqPlTC'), "Halloween Decorations Around Pleasanton"]]],
-  ["Profiles & teacher fun", [
+    [drive('1j89DYvdT5mEg8SwBeDidc-oNtw5YpDEK'), "Christmas Decorations Around Pleasanton"]]],
+  ["Teachers!", [
     [drive('15Y_EJ8pbqKW1UG96PUiUvdPdT_oGocax'), "AVHS Cribs: Mrs. Barnett Dreyfuss"],
-    [yt('XevbGxue6H0'), "Teacher Fun"],
     [yt('aFxJZ8ITv9A'), "Teacher Fun"]]],
-  ["Promos", [
+  ["Promotions", [
     [drive('1pTS_dALZyWfDkCl8zlw-4sSdYfiquIUA'), "Japanese Program's Fall Festival"],
     [drive('1QMubZCXQ5SEUrfz_r9VwK25RysSKRXu3'), "Journalism's Coffee Cart"]]],
 ];
@@ -226,7 +227,7 @@ const shows = ['-IsVSRZpgG0','i6RgntW0a9A','Tm2YeQ-Y-rk','a8hvbwphocM'].map((id,
 
 const midTwo = [
   {...drive('1zmPkmPWBOjhN4Ijp3sEiqUhNzT81Ly8f'), t:"The Galaxy Explorer's Guide", y:"2025", d:"A comprehensive museum and responsibilities guide for new volunteers at Chabot Space & Science Center, still often shown at orientation."},
-  {...drive('1Q-p19rohMVZZp4Yxb4R8POh-DW1yxTlY'), t:"Infinite Powers", y:"2025", d:"An educational video explaining infinity in math and the concept of integration, dumbed down with simple examples and analogies."},
+  {...drive('1Q-p19rohMVZZp4Yxb4R8POh-DW1yxTlY'), t:"Infinite Powers", y:"2025", d:"A short video explaining infinity in math and the concept of integration, dumbed down with simple examples and analogies."},
 ];
 
 const projects = [
@@ -242,11 +243,11 @@ function card(v, cls=""){
     <div><div class="t">${esc(v.t)}${v.y?` <span class="y">${v.y}</span>`:""}</div>${v.d?`<div class="d">${esc(v.d)}</div>`:""}</div></a>`;
 }
 document.getElementById('top-two').innerHTML = topTwo.map(v=>card(v,'lead')).join('');
-document.getElementById('avtv-groups').innerHTML = avtv.map(([g,items]) =>
-  `<h3 class="group">${g}</h3><div class="grid">${items.map(([v,t])=>card({...v,t})).join('')}</div>`).join('');
+document.getElementById('avtv-groups').innerHTML = `<div class="cats">${avtv.map(([g,items]) =>
+  `<div class="cat"><h3 class="group">${g}</h3><div class="stack">${items.map(([v,t])=>card({...v,t})).join('')}</div></div>`).join('')}</div>`;
 document.getElementById('show-grid').innerHTML = shows.map(v=>card(v)).join('');
 document.getElementById('mid-two').innerHTML = midTwo.map(v=>card(v)).join('');
-document.getElementById('avtv-featured').innerHTML = card(avtvLead,'feature') + `<div class="trio">${avtvSide.map(v=>card(v)).join('')}</div>`;
+document.getElementById('avtv-featured').innerHTML = `<div class="quad">${avtvTop.map(v=>card(v)).join('')}</div>`;
 document.getElementById('project-grid').innerHTML = projects.map(v=>card(v)).join('');
 </script>
 </body>
