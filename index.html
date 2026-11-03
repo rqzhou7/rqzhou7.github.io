@@ -49,7 +49,7 @@ nav{display:flex; align-items:center}
 @media (max-width:560px){.theme-toggle{margin-left:12px}}
 
 /* hero */
-.hero{display:grid; grid-template-columns:1fr 1.15fr; gap:48px; align-items:end; padding:64px 0 56px}
+.hero{display:grid; grid-template-columns:1fr 1.4fr; gap:56px; margin-inline:calc(50% - min(680px, 50vw - 24px)); align-items:end; padding:64px 0 56px}
 .hero h1{font-family:var(--serif); font-weight:400; font-size:clamp(56px,9vw,104px); line-height:.92; margin:0 0 28px; letter-spacing:-.01em}
 .hero p.lede{font-size:18px; max-width:30em; margin:0 0 22px; color:var(--ink)}
 .creds{list-style:none; padding:0; margin:0 0 28px; color:var(--muted); font-size:15px}
@@ -148,7 +148,7 @@ try{const t=localStorage.getItem('theme'); if(t==='light'||t==='dark') document.
       <a class="cta" href="#projects">Watch the work</a>
     </div>
     <figure>
-      <img src="img/hero-kit.jpg" alt="A DJI Osmo Pocket 2 with its wireless mic, tripod, and a SanDisk card adapter on a wooden desk">
+      <img src="img/hero-kit-crop.jpg" alt="A DJI Osmo Pocket 2 with its wireless mic, tripod, and a SanDisk card adapter on a wooden desk">
     </figure>
   </section>
 
@@ -202,7 +202,7 @@ const THUMB = {
   '10NJy5iuIcPY_smBo-U30hqc3F5bI-hYK':'ice-rink', '1j89DYvdT5mEg8SwBeDidc-oNtw5YpDEK':'christmas',
   '1WFW47NxRYpLiOrqBQyuv6u5WPcwqPlTC':'halloween', '15Y_EJ8pbqKW1UG96PUiUvdPdT_oGocax':'cribs',
   '1pTS_dALZyWfDkCl8zlw-4sSdYfiquIUA':'fall-festival', '1QMubZCXQ5SEUrfz_r9VwK25RysSKRXu3':'coffee-cart',
-  '1zmPkmPWBOjhN4Ijp3sEiqUhNzT81Ly8f':'galaxy-guide', '1Q-p19rohMVZZp4Yxb4R8POh-DW1yxTlY':'infinite-powers',
+  '1zmPkmPWBOjhN4Ijp3sEiqUhNzT81Ly8f':'galaxy-guide', '1Q-p19rohMVZZp4Yxb4R8POh-DW1yxTlY':'infinite-powers-sand',
   '1p7noCifHPqIlUKfmXIKYOBv0tg_UPXvc':'morning-in-america', '1QDsjz_F2dsMYt7JQOp9gjSam7PLFplHb':'ill-do-it-tomorrow',
   '1-fRRoETjaV7qkufdrqvuSF13yRQNIiU9':'diabetes'};
 const drive = id => ({href:`https://drive.google.com/file/d/${id}/view`, img: THUMB[id] ? `img/${THUMB[id]}.jpg` : `https://drive.google.com/thumbnail?id=${id}&sz=w800`});
@@ -240,7 +240,7 @@ const shows = ['-IsVSRZpgG0','i6RgntW0a9A','Tm2YeQ-Y-rk','a8hvbwphocM'].map((id,
 
 const midTwo = [
   {...drive('1zmPkmPWBOjhN4Ijp3sEiqUhNzT81Ly8f'), t:"The Galaxy Explorer's Guide", y:"2025", d:"A comprehensive museum and responsibilities guide for new volunteers at Chabot Space & Science Center, still often shown at orientation."},
-  {...drive('1Q-p19rohMVZZp4Yxb4R8POh-DW1yxTlY'), t:"Infinite Powers", y:"2025", d:"A short video explaining infinity in math and the concept of integration, dumbed down with simple examples and analogies."},
+  {...drive('1Q-p19rohMVZZp4Yxb4R8POh-DW1yxTlY'), t:"Infinite Powers", y:"2025", d:"A short video explaining infinity in math and the concept of integration, dumbed down with simple examples and analogies. Made in one day."},
 ];
 
 const projects = [
